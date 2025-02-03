@@ -88,6 +88,22 @@ Add a new line like this:
 
 ___
 
+# Important Notes
+
+The Script folder is to be used in Debian linux distros like Ubuntu, Debian, and Raspbian.
+
+The Container folder is for building an Alpine container.
+
+___
+
 # Containerized version
 
-I plan on containerizing this bash application and posting it on Docker Hub.  I will update this with the repository information once it is done.
+This application has been containerized and is available in my [Docker Hub](https://hub.docker.com/repository/docker/prengineer/miab_dyndns/general) repository.
+
+All the necessary information to run it can be found there.
+
+## How I built it for multiple platforms:
+
+docker buildx build --platform linux/amd64,linux/arm64/v8,linux/arm/v6,linux/arm/v7 -t prengineer/miab_dyndns:1.0.0 .
+
+docker push prengineer/miab_dyndns:1.0.0
